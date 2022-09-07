@@ -13,12 +13,15 @@ public class HRMain{
 		e2.name="Miyako";
 		e2.salary=3211.11F;
 
+		e1=e2;
+
 		e1.display();
 		System.out.println("****************");
 
 		e2.display();
+		
 	}
-
 
 }
 
+java HRMain

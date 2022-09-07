@@ -5,13 +5,12 @@ public class Employee{
 
 
 	public void display(){
-
+		int num;
+		
 		System.out.println("Id="+id);
 		System.out.println("Name="+name);
 		System.out.println("Salary="+salary);
 
 	}
 	
-
-
 }
