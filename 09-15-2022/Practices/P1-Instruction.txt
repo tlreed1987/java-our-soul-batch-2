@@ -1,0 +1,8 @@
+1. Create a project and copy all files from the folder  excercise_13_3 to src folder of your project
+2. Fix Errors if any. 
+3. go to ShoppingCart.java files and write the code to remove all Trousers from the items list, then print out the list
+
+ public void removeItemFromCart(String desc){
+        // remove all Trousers from the items list, then print out the list
+        
+    }
