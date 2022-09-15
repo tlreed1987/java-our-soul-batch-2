@@ -1,7 +1,10 @@
 package com.lambda;
 
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+
 public class Main {
-	public static int sum(int[]numbers, Calculator c) {
+	public static int sum(int[]numbers, IntPredicate c) {
 		int total=0;
 		for(int v:numbers) {
 			if(c.test(v)) {
@@ -17,7 +20,7 @@ public class Main {
 		System.out.println(result);
 		
 		//sum of all odd numbers
-		Calculator c= n-> n%2!=0;
+		IntPredicate c= n-> n%2!=0;
 
 		
 		result=sum(numbers,c);
