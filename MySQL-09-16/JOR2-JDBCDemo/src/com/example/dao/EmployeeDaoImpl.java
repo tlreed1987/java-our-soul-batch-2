@@ -2,6 +2,7 @@ package com.example.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -53,13 +54,19 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	@Override
 	public String register(Employee emp) throws EmployeeException {
 		Connection con=null;
-		Statement st=null;
+		PreparedStatement st=null;
 		String message="";
 		try {
 			con=getConnection();
-			st=con.createStatement();
-			String query="insert into employee values("+emp.getId()+",'"+emp.getName()+"',"+emp.getSalary()+","+emp.getDeptId()+")";
-			int n=st.executeUpdate(query);
+			//String query="insert into employee values("+emp.getId()+",'"+emp.getName()+"',"+emp.getSalary()+","+emp.getDeptId()+")";
+			String query="insert into employee values(?,?,?,?)";
+			st=con.prepareStatement(query);
+			st.setInt(1, emp.getId());
+			st.setString(2, emp.getName());
+			st.setDouble(3, emp.getSalary());
+			st.setInt(4, emp.getDeptId());
+			int n=st.executeUpdate();
+			
 			if(n==1) {
 				message="Hi "+emp.getName()+ ", You are registred successfully";
 			}
