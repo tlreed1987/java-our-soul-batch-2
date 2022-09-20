@@ -1,3 +1,4 @@
+package com.example.pojos;
 
 public class Employee {
 	private int id;
