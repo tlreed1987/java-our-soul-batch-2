@@ -18,7 +18,7 @@ public class Main {
 			Statement st=con.createStatement();
 			ResultSet rs=st.executeQuery("select * from employee");
 			while(rs.next()) {
-				int id=rs.getInt(1);
+				int id=rs.getInt("EMP_ID"); //int id=rs.getInt(1); //
 				String name=rs.getString("name");
 				double salary=rs.getDouble("salary");
 				int did=rs.getInt("DEPT_ID");
