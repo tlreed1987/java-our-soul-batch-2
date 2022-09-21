@@ -18,16 +18,16 @@ public class Main {
 		
 		 EmployeeDao dao=EmployeeFactory.get();
 		 
-		 Employee emp=new Employee(7,"Alex",3412.32,103);
-		 
-		 try {
-			String s=dao.register(emp);
-			System.out.println(s);
-		} catch (EmployeeException e1) {
-			System.out.println(e1);
-			
-		}
-		
+//		 Employee emp=new Employee(7,"Alex",3412.32,103);
+//		 
+//		 try {
+//			String s=dao.register(emp);
+//			System.out.println(s);
+//		} catch (EmployeeException e1) {
+//			System.out.println(e1);
+//			
+//		}
+//		
 		 List<Employee> eList;
 		try {
 			eList = dao.findAll();

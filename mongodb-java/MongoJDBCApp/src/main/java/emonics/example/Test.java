@@ -1,4 +1,4 @@
-package cogent.example;
+package emonics.example;
 
 import java.util.Iterator;
 
@@ -23,7 +23,7 @@ public class Test {
 //		
 //	      credential = MongoCredential.createCredential("nitin", "nitindb", 
 //	         "password".toCharArray()); 
-		MongoDatabase database = mongo.getDatabase("nitindb");
+		MongoDatabase database = mongo.getDatabase("java-our-soul");
 		MongoCollection<Document> collection = database.getCollection("employee");
 		FindIterable<Document> iterDoc = collection.find();
 
@@ -39,9 +39,9 @@ public class Test {
 			
 			//System.out.println(d.toJson());
 			String name=d.getString("name");
-			int id = d.getInteger("_id");
-			double salary = d.getDouble("salary");
-			System.out.println(id + ":" + name + ":" + salary);
+			int id = d.getDouble("empid").intValue();
+		    double salary = d.getDouble("salary");
+		    System.out.println(id + ":" + name + ":" + salary);
 			;
 //		
 			

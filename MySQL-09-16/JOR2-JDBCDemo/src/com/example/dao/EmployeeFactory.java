@@ -4,6 +4,7 @@ public class EmployeeFactory {
 	
 	public static EmployeeDao get() {
 		return new EmployeeDaoImpl();
+	
 	}
 
 }
