@@ -8,6 +8,7 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 
@@ -25,15 +26,17 @@ public class Test {
 //	         "password".toCharArray()); 
 		MongoDatabase database = mongo.getDatabase("java-our-soul");
 		MongoCollection<Document> collection = database.getCollection("employee");
+		
 		FindIterable<Document> iterDoc = collection.find();
-
-		Iterator<Document> it = iterDoc.iterator();
+		
+		MongoCursor<Document> it = iterDoc.iterator();
 		// System.out.println("hello");
 //		Document d = new Document();
 //		d.append("_id", 3);
 //		d.append("name", "David");
 //		d.append("salary", 11111.11);
 //		collection.insertOne(d);
+		
 		while (it.hasNext()) {
 			Document d = it.next();
 			
