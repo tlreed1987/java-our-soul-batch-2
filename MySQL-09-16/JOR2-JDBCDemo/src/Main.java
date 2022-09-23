@@ -28,23 +28,23 @@ public class Main {
 //			
 //		}
 //		
-		 List<Employee> eList;
-		try {
-			eList = dao.findAll();
-			eList.forEach(e->System.out.println(e));
-		   
-		} catch (EmployeeException e1) {
-			System.out.println(e1);
-		}
+//		 List<Employee> eList;
+//		try {
+//			eList = dao.findAll();
+//			eList.forEach(e->System.out.println(e));
+//		   
+//		} catch (EmployeeException e1) {
+//			System.out.println(e1);
+//		}
 		 
-		// Employee e;
-//			try {
-//				e = dao.findById(4);
-//				System.out.println(e)
-//			   
-//			} catch (EmployeeException e1) {
-//				System.out.println(e1);
-//			}
+		 Employee e;
+			try {
+				e = dao.findById(3);
+				System.out.println(e);
+			   
+			} catch (EmployeeException e1) {
+				System.out.println(e1);
+			}
 	}
 
 }

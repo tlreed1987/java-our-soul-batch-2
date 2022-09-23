@@ -22,42 +22,32 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	@Override
 	public List<Employee> findAll() throws EmployeeException {
 		List<Employee> empList=new ArrayList<>();
-		Connection con=null;
-		Statement st=null;
-		ResultSet rs=null;
-		try {
-			con=getConnection();
-			st=con.createStatement();
-			rs=st.executeQuery("select * from employee");
-			while(rs.next()) {
+	
+		try(Connection con=getConnection();
+			Statement st=con.createStatement();
+			ResultSet rs=st.executeQuery("select * from employee"))
+		{
+		  	while(rs.next()) {
 				int id=rs.getInt("EMP_ID"); //int id=rs.getInt(1); //
 				String name=rs.getString("name");
 				double salary=rs.getDouble("salary");
 				int did=rs.getInt("DEPT_ID");
 				empList.add(new Employee(id,name,salary,did));
-			}
+		      }
 			
 		} catch (SQLException e) {
 			throw new EmployeeException(e.getMessage(),e);
-		}finally {
-			try {
-				rs.close();
-				st.close();
-				con.close();
-			}catch(SQLException s) {
-				System.out.println(s); // logger to store it in file. 
-			}
 		}
+		
 		return empList;
 	}
 
 	@Override
 	public String register(Employee emp) throws EmployeeException {
-		Connection con=null;
+		
 		PreparedStatement st=null;
 		String message="";
-		try {
-			con=getConnection();
+		try(Connection con=getConnection()){
 			//String query="insert into employee values("+emp.getId()+",'"+emp.getName()+"',"+emp.getSalary()+","+emp.getDeptId()+")";
 			String query="insert into employee values(?,?,?,?)";
 			st=con.prepareStatement(query);
@@ -73,15 +63,40 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		}catch(SQLException s) {
 			message="Error while inserting a record";
 			throw new EmployeeException(s.getMessage(),s);
+		}
+	
+		return message;
+	}
+	public Employee findById(int id) throws EmployeeException {
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		Employee emp = null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			rs=st.executeQuery("select * from employee where EMP_ID=" +id);
+				if(rs.next()) {
+					int eid=rs.getInt("EMP_ID"); //int id=rs.getInt(1); //
+					String name=rs.getString("name");
+					double salary=rs.getDouble("salary");
+					int did=rs.getInt("DEPT_ID");
+					emp = new Employee(eid,name,salary,did);
+				}
+			}
+		catch (SQLException s) {
+			throw new EmployeeException(s.getMessage(),s);
 		}finally {
 			try {
+				rs.close();
 				st.close();
 				con.close();
 			}catch(SQLException s) {
 				System.out.println(s); // logger to store it in file. 
 			}
 		}
-		return message;
+		return emp;
 	}
+
 
 }
