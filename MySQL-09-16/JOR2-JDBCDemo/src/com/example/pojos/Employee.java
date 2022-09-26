@@ -5,6 +5,7 @@ public class Employee {
 	private String name;
 	private double salary;
 	private int deptId;
+
 	public Employee() {
 		
 	}
@@ -43,6 +44,6 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", deptId=" + deptId + "]";
 	}
-
+		
 	
 }

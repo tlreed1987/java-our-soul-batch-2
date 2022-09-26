@@ -42,7 +42,8 @@ public class EmployeeServlet extends HttpServlet{
 				
 				s.setAttribute("empid", id);
 				s.setAttribute("emp", e);
-				req.getRequestDispatcher("emp-ui").forward(req, res);
+			
+				req.getRequestDispatcher("/emp-details.jsp").forward(req, res);
 				
 	}
 
