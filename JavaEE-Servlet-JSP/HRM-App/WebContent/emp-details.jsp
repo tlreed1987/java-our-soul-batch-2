@@ -11,7 +11,7 @@
 <body>
 	<h1 align="center"> <u>Employee Details [ #${empid} ]</u> </h1>
 	
-	<c:if test="${emp}==null "> 
+	<c:if test="empty ${emp}"> 
 		<p>Employee with Id <b>${empid}</b> doesnt exist </p>	
 	</c:if>
 		<p><b>Employee Id : </b> ${emp.id} </p>
