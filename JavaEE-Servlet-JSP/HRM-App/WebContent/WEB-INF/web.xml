@@ -13,8 +13,19 @@
   		<servlet-name>emps</servlet-name>
   		<servlet-class>com.example.web.EmployeeServlet</servlet-class>
   </servlet>
+  <servlet>
+  		<servlet-name>empui</servlet-name>
+  		<servlet-class>com.example.ui.EmployeeUI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>empui</servlet-name>
+  	<url-pattern>/emp-ui</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>emps</servlet-name>
   	<url-pattern>/employee-service</url-pattern>
   </servlet-mapping>
+  <session-config>
+  	<session-timeout>10</session-timeout>
+  </session-config>
 </web-app>
