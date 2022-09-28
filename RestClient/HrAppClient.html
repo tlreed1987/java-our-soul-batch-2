@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title> CustomerApp Client Application </title>
+		<script>
+			
+			function searchById(){
+				var inputText=document.getElementById("eid");
+				var empid=inputText.value;
+
+				var url="http://localhost:8080/hrm/emp-rest/find/"+empid;
+				var xhr  = new XMLHttpRequest();
+				
+				xhr.open("GET", url, true);
+				xhr.setRequestHeader('Accept', 'application/json')
+				xhr.onload = function() {
+				
+				var emp = JSON.parse(xhr.responseText);	
+				
+				if (xhr.readyState == 4 && xhr.status == "200") {
+					console.log(emp);
+					document.getElementById("name").value=emp.name;
+					document.getElementById("sal").innerHTML=emp.salary;
+					document.getElementById("did").innerHTML=emp.deptId;
+				}else{
+					console.error(emp);
+				}
+				
+			    }
+			xhr.send();
+		}	
+		</script>
+		
+	</head>
+
+<body>
+
+<h1> Testing JavaScript with Rest Services </h1>
+
+Employee Id : <input type="text" id="eid"/> <input type="button" value="Search" id="b1" onClick="searchById();"/>
+
+<p>NAME: <input type="text" id="name" />
+<p>SALARY:<span id="sal"> </span>
+<p>DEPT ID:<span id="did"> </span>
+
+
+</body>
+
+</html>
