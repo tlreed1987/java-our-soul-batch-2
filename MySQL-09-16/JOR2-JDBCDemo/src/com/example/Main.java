@@ -1,3 +1,5 @@
+
+package com.example;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,15 +20,16 @@ public class Main {
 		
 		 EmployeeDao dao=EmployeeFactory.get();
 		 
-//		 Employee emp=new Employee(7,"Alex",3412.32,103);
-//		 
-//		 try {
-//			String s=dao.register(emp);
-//			System.out.println(s);
-//		} catch (EmployeeException e1) {
-//			System.out.println(e1);
-//			
-//		}
+		 
+		 Employee emp=new Employee(8,"Harris",4132.12,102);
+		 
+		 try {
+			String s=dao.register(emp);
+			System.out.println(s);
+		} catch (EmployeeException e1) {
+			System.out.println(e1);
+			
+		}
 //		
 //		 List<Employee> eList;
 //		try {
@@ -37,14 +40,14 @@ public class Main {
 //			System.out.println(e1);
 //		}
 		 
-		 Employee e;
-			try {
-				e = dao.findById(3);
-				System.out.println(e);
-			   
-			} catch (EmployeeException e1) {
-				System.out.println(e1);
-			}
+//		 Employee e;
+//			try {
+//				e = dao.findById(5);
+//				System.out.println(e);
+//			   
+//			} catch (EmployeeException e1) {
+//				System.out.println(e1);
+//			}
 	}
 
 }
