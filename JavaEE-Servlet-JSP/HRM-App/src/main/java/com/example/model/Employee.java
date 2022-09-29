@@ -1,12 +1,28 @@
 package com.example.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Data;
 @XmlRootElement
+@Entity
+@Table(name="EMPLOYEE")
+@Data
 public class Employee {
+	@Id
+	@Column(name="EMP_ID")
 	private int id;
+	
+	@Column(name="NAME")
 	private String name;
+	
+	@Column(name="SALARY")
 	private double salary;
+	
+	@Column(name="DEPT_ID")
 	private int deptId;
 
 	public Employee() {
@@ -19,34 +35,5 @@ public class Employee {
 		this.salary = salary;
 		this.deptId = deptId;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public double getSalary() {
-		return salary;
-	}
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
-	public int getDeptId() {
-		return deptId;
-	}
-	public void setDeptId(int deptId) {
-		this.deptId = deptId;
-	}
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", deptId=" + deptId + "]";
-	}
 		
-	
 }

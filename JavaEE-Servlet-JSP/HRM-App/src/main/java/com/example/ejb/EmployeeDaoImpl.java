@@ -71,6 +71,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return message;
 	}
 	public Employee findById(int id) throws EmployeeException {
+		System.out.println("impl1");
 		Connection con=null;
 		Statement st=null;
 		ResultSet rs=null;
