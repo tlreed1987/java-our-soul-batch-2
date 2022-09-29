@@ -37,8 +37,8 @@ public class EmployeeDaoImpl2 implements EmployeeDao{
 				Session s=sf.openSession()) {
 			   try {
 					s.getTransaction().begin();
-						//s.save(emp);
-						s.remove(emp);
+						s.save(emp);
+					
 				
 					s.getTransaction().commit();
 					message=emp.getName()+", you are registered";
