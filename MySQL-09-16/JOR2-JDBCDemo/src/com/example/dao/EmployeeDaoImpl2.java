@@ -1,18 +1,11 @@
 package com.example.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+
 import java.util.List;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
+import javax.persistence.Query;
+
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import com.example.pojos.Department;
 import com.example.pojos.Employee;
@@ -27,8 +20,19 @@ public class EmployeeDaoImpl2 implements EmployeeDao{
 	
 	@Override
 	public List<Employee> findAll() throws EmployeeException {
+		List<Employee> ls=null;
 		
-		return null;
+		try(SessionFactory sf=getConnection();
+				Session s=sf.openSession()) {
+			  Query<Employee> q=s.createNamedQuery("findAll", Employee.class);
+			 
+			  ls=q.getResultList();
+			  
+		}catch(Exception ex) {
+			throw new EmployeeException(ex.getMessage(),ex);
+		}
+		
+		return ls;
 	}
 
 	@Override
@@ -59,14 +63,14 @@ public class EmployeeDaoImpl2 implements EmployeeDao{
 	}
 	public Employee findById(int id) throws EmployeeException {
 		Employee emp=new Employee();
-		System.out.println(emp.hashCode());
+		
 		try(SessionFactory sf=getConnection();
 				Session s=sf.openSession()) {
-			emp=s.get(Employee.class, id);
-			System.out.println(emp.hashCode());
+			emp=s.load(Employee.class, id);
+			
 		}catch (HibernateException e) {
 			// TODO Auto-generated catch block
-			throw new EmployeeException(e.getMessage(),e);
+			//throw new EmployeeException(e.getMessage(),e);
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			throw new EmployeeException(e.getMessage(),e);
