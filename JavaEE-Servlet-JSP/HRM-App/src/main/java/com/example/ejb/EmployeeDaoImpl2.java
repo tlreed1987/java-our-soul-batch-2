@@ -17,11 +17,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.example.model.Employee;
-@Stateless
+@Stateless(name="b2")
 public class EmployeeDaoImpl2 implements EmployeeDao{
 
 	public SessionFactory getConnection() throws SQLException{
-		SessionFactory f=new Configuration().configure("/com/example/model/hibernate.cfg.xml").buildSessionFactory();
+		SessionFactory f=new Configuration().configure("/com/example/hibernate.cfg.xml").buildSessionFactory();
 		return f;
 		
 	}

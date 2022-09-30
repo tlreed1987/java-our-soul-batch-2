@@ -14,8 +14,10 @@ import com.example.model.Employee;
 
 @Stateless @Path("emp-rest")
 public class EmployeeRS {
-	@EJB//(lookup="global/hrm/EmployeeDaoImpl2", mappedName="global/hrm/EmployeeDaoImpl2")
-	 private EmployeeDao dao;
+	//@EJB//(lookup="global/hrm/EmployeeDaoImpl2", mappedName="global/hrm/EmployeeDaoImpl2")
+	@EJB(beanName="b2")
+	private EmployeeDao dao; 
+
 	//@Path("name")
     //@WebMethod
 	@GET

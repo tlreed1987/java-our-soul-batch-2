@@ -13,7 +13,7 @@ import javax.ejb.Stateless;
 
 import com.example.model.Employee;
 
-@Stateless
+@Stateless(name="b1")
 public class EmployeeDaoImpl implements EmployeeDao{
 
 	public Connection getConnection() throws SQLException{

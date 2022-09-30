@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.pojos.Department;
 import com.example.pojos.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao{
@@ -54,7 +55,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			st.setInt(1, emp.getId());
 			st.setString(2, emp.getName());
 			st.setDouble(3, emp.getSalary());
-			st.setInt(4, emp.getDeptId());
+		//	st.setInt(4, emp.getDeptId());
 			int n=st.executeUpdate();
 			
 			if(n==1) {
@@ -96,6 +97,12 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			}
 		}
 		return emp;
+	}
+
+	@Override
+	public Department findDepartment(int id) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

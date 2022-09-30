@@ -13,7 +13,7 @@ import com.example.model.Employee;
 @WebService
 @Stateless
 public class EmployeeJAX {
-	@EJB
+	@EJB(beanName="b2")
 	 private EmployeeDao dao;
 	@WebMethod(operationName="greet")
 	public String get(String name) {

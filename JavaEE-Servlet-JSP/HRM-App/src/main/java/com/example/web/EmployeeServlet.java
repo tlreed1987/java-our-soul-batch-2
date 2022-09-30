@@ -18,7 +18,7 @@ import com.example.model.Employee;
  * 
  */
 public class EmployeeServlet extends HttpServlet{
-	@EJB
+	@EJB(beanName="b2")
 	private EmployeeDao dao;
 	private static final long serialVersionUID = 1L;
 	/*

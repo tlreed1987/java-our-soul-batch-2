@@ -14,6 +14,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.example.pojos.Department;
 import com.example.pojos.Employee;
 
 public class EmployeeDaoImpl2 implements EmployeeDao{
@@ -57,12 +58,12 @@ public class EmployeeDaoImpl2 implements EmployeeDao{
 		return message;
 	}
 	public Employee findById(int id) throws EmployeeException {
-		Employee emp=null;
-		
+		Employee emp=new Employee();
+		System.out.println(emp.hashCode());
 		try(SessionFactory sf=getConnection();
 				Session s=sf.openSession()) {
 			emp=s.get(Employee.class, id);
-			
+			System.out.println(emp.hashCode());
 		}catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			throw new EmployeeException(e.getMessage(),e);
@@ -74,5 +75,22 @@ public class EmployeeDaoImpl2 implements EmployeeDao{
 		return emp;
 	}
 
+	public Department findDepartment(int id) throws EmployeeException {
+		Department d=null;
+		
+		try(SessionFactory sf=getConnection();
+				Session s=sf.openSession()) {
+			d=s.get(Department.class, id);
+			
+		}catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			throw new EmployeeException(e.getMessage(),e);
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			throw new EmployeeException(e.getMessage(),e);
+		}
+		
+		return d;
+	}
 
 }
