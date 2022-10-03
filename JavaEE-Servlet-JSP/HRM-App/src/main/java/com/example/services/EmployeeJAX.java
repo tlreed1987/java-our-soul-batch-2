@@ -6,6 +6,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import com.example.ejb.EmployeeDao;
+import com.example.ejb.EmployeeDaoImpl2;
 import com.example.ejb.EmployeeException;
 import com.example.model.Employee;
 

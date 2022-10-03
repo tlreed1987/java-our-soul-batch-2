@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.example.ejb.EmployeeDao;
+import com.example.ejb.EmployeeDaoImpl2;
 import com.example.ejb.EmployeeException;
 import com.example.model.Employee;
 
@@ -45,7 +46,7 @@ public class EmployeeServlet extends HttpServlet{
 				s.setAttribute("empid", id);
 				s.setAttribute("emp", e);
 			
-				req.getRequestDispatcher("/emp-details.jsp").forward(req, res);
+				req.getRequestDispatcher("empdetails.jsp").forward(req, res);
 				
 	}
 

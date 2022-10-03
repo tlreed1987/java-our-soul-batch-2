@@ -3,6 +3,8 @@ package com.example.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -11,7 +13,13 @@ import lombok.Data;
 @Entity
 @Table(name="EMPLOYEE")
 @Data
-public class Employee {
+@NamedQueries(
+		{
+			@NamedQuery(name="findAllEmployee", query="select e from Employee e"),
+			@NamedQuery(name="findAllEmployeeByDept", query="select e from Employee e where e.deptId=:dpt")
+		}
+)
+public class Employee implements Serializable {
 	@Id
 	@Column(name="EMP_ID")
 	private int id;

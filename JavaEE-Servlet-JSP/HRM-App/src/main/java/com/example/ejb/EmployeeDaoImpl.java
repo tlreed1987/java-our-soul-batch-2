@@ -22,7 +22,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return con;
 	}
 	
-	@Override
+	//@Override
 	public List<Employee> findAll() throws EmployeeException {
 		List<Employee> empList=new ArrayList<>();
 	
@@ -45,7 +45,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return empList;
 	}
 
-	@Override
+	//@Override
 	public String register(Employee emp) throws EmployeeException {
 		
 		PreparedStatement st=null;

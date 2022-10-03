@@ -1,5 +1,7 @@
 package com.example.services;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
@@ -9,6 +11,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.example.ejb.EmployeeDao;
+//import com.example.ejb.EmployeeDao;
+import com.example.ejb.EmployeeDaoImpl2;
 import com.example.ejb.EmployeeException;
 import com.example.model.Employee;
 
@@ -32,6 +36,11 @@ public class EmployeeRS {
 		return dao.findById(id);
 	}
 
+	@GET
+	@Path("findAll") @Produces("application/json")
+	public List<Employee> find() throws EmployeeException {
+		return dao.findAll();
+	}
 	
 
 }

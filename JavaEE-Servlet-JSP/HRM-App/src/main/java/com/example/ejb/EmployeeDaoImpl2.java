@@ -15,6 +15,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import com.example.model.Employee;
 @Stateless(name="b2")
@@ -26,13 +27,23 @@ public class EmployeeDaoImpl2 implements EmployeeDao{
 		
 	}
 	
-	@Override
+	//@Override
 	public List<Employee> findAll() throws EmployeeException {
-		
-		return null;
+		List<Employee> empList=null;
+		try(SessionFactory sf=getConnection();
+				Session s=sf.openSession()) {
+				//String q="select e from Employee e";
+				//Query<Employee> tq=s.createQuery(q, Employee.class);
+			     Query<Employee> tq=s.createNamedQuery("findAllEmployee", Employee.class);
+				empList=tq.getResultList();
+			
+		}catch(HibernateException | SQLException ex) {
+			ex.printStackTrace();
+		}
+		return empList;
 	}
 
-	@Override
+	//@Override
 	public String register(Employee emp) throws EmployeeException {
 		String message=null;
 		try(SessionFactory sf=getConnection();
