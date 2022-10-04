@@ -19,8 +19,7 @@ import lombok.Data;
 @Table(name="EMPLOYEE")
 @Data
 @NamedQueries(
-				@NamedQuery(name="findAll", query="select e from Employee"),
-				@NamedQuery(name="findAll1" query="")
+				@NamedQuery(name="findAll", query="select e from Employee")
 		)
 @Proxy(lazy=false)
 public class Employee {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean class="com.example.Employee" id="emp" abstract="true">
+	<property name="id" value="1"></property>
+	<property name="name" value="Guest"></property>
+	<property name="salary" value="1000.00"></property>
+	<property name="add">
+		<bean id="add" class="com.example.Address">
+				<property name="street" value="7th Cross"/>
+				<property name="city" value="Jersey"/>
+		</bean>
+	</property> 
+</bean>
+
+<bean class="com.example.Manager" id="mgr" parent="emp">
+	<property name="name" value="Manager"></property>
+	<property name="deptName" value="Human Resource"/>
+</bean>
+
+<bean class="com.example.Admin" id="adm" parent="emp">
+	<property name="name" value="Admin"></property>
+	
+</bean>
+
+</beans>
