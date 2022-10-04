@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean class="com.example.Employee" id="emp" abstract="true">
+	
+</bean>
+
+<bean id="add" class="com.example.Address">
+				<property name="street" value="7th Cross"/>
+				<property name="city" value="Jersey"/>
+</bean>
+
+<bean class="com.example.Manager" id="mgr">
+	<constructor-arg index="0" value="2"/>
+	<constructor-arg index="1" value="Manager"/>
+	<constructor-arg index="2" value="1200.00"/>
+	<constructor-arg index="3" value="Human Resource"/>
+	<constructor-arg index="4" ref="add"/>
+</bean>
+
+<bean class="com.example.Admin" id="adm" parent="emp">
+	<constructor-arg index="0" value="1"/>
+	<constructor-arg index="1" value="Guest"/>
+	<constructor-arg index="2" value="1000.00"/>
+	<constructor-arg index="3" ref="add"/>
+</bean>
+
+</beans>
