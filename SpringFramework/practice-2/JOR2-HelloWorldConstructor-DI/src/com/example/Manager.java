@@ -1,7 +1,9 @@
 package com.example;
 
+import java.util.List;
+
 public class Manager extends Employee {
-		public Manager(int id, String name, double salary, String deptName, Address add) {
+		public Manager(int id, String name, double salary, String deptName, List<Address> add) {
 		super(id, name, salary, add);
 		this.deptName=deptName;
 		

@@ -5,7 +5,7 @@ import java.util.List;
 public class Address {
 	private String street;
 	private String city;
-	private List phone;
+	private List<String> phone;
 	public String getStreet() {
 		return street;
 	}
@@ -22,10 +22,10 @@ public class Address {
 	public String toString() {
 		return "Address [street=" + street + ", city=" + city + "]";
 	}
-	public List getPhone() {
+	public List<String> getPhone() {
 		return phone;
 	}
-	public void setPhone(List phone) {
+	public void setPhone(List<String> phone) {
 		this.phone = phone;
 	}
 	

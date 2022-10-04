@@ -4,15 +4,19 @@ import java.util.List;
 
 import org.springframework.beans.factory.InitializingBean;
 
-public abstract class Employee implements InitializingBean {
+public  class Employee implements InitializingBean {
 	private int id;
 	private String name;
 	private double salary;
-	private List<Address> add;
+	private Address add;
 	
 	
-	public Employee(int id, String name, double salary, List<Address> add) {
-		super();
+	public Employee() {
+		
+	}
+
+	public Employee(int id, String name, double salary, Address add) {
+	
 		this.id = id;
 		this.name = name;
 		this.salary = salary;
@@ -52,10 +56,10 @@ public abstract class Employee implements InitializingBean {
 	}
 	
 	
-	public List<Address> getAdd() {
+	public Address getAdd() {
 		return add;
 	}
-	public void setAdd(List<Address> add) {
+	public void setAdd(Address add) {
 		this.add = add;
 	}
 	@Override
