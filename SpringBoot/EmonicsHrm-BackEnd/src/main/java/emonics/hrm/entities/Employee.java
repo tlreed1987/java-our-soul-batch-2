@@ -3,7 +3,11 @@ package emonics.hrm.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +19,8 @@ public class Employee{
 	private int id;
 	private String name;  // default colum mapping to same name properties
 	private double salary;
-	@Column(name="DEPT_ID")
-	private int deptId;
+	@JsonManagedReference
+	@ManyToOne
+	@JoinColumn(name="DEPT_ID", referencedColumnName="DEPT_ID")
+	private Department dept;
 }

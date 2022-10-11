@@ -8,12 +8,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
+import emonics.hrm.entities.Department;
 import emonics.hrm.entities.Employee;
 
 @Repository
-public interface EmployeeDao extends JpaRepository<Employee,Integer> {
-		List<Employee> findBySalaryGreaterThan(double salary);
+public interface DepartmentDao extends JpaRepository<Department,Integer> {
 		
-		@Query("select e from Employee e where e.salary<?1")
-		List<Employee> findAllEmployee(double amt);
 }
