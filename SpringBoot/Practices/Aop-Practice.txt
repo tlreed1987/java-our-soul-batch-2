@@ -1,0 +1,24 @@
+1. Create A Table with The Name Contact containing
+EMP_ID, ADDRESS , PHONE_NUMBER
+
+2. RELATIONSHIP ONE TO ONE HAS TO BE CREATE BETWEEN CONTACT AND EMPLOYEE
+    FK CONSTRAINT CAN BE CREATED ON CONTACT. 
+3. HAVE SOME DEMO RECORDS for EXISTING EMPLOYEE. 
+
+4. SPRING BOOT EMONICS-HRM [ OR WHATEVER NAME YOU HAVE ]
+   - ADD DAO FOR CONTACT AS WELL.
+
+5. ADD SERVICE LAYER to AUTO-WIRED WITH  DAOs
+
+6. REST SERVICE to AUTO WIRE WITH SERVICE LAYER. 
+
+7. ADD OPERATION TO INSERT A RECORD of A EMPLOYEE WITH his/her Contact details
+   IN SERVICE CLASS
+8. Expose it to REST  [ POST for add , Put for update, delete for delete ]
+9. TEST IT USING REST CLIENT. 
+
+--- START WORKING ON AOP. 
+ADD - AOP DEPENDENCY
+ADD ASPECT CLASS [ attached in GIT under practice folder - make approprite changes in PointCut Expression]
+And again test ...see if something got printed on console 
+
