@@ -182,6 +182,8 @@ tsc is the TypeScript compiler. We use tsc to compile TypeScript code into JavaS
 
 That's it! You have successfully installed the development tools: Visual Studio Code, nvm, node, npm and tsc.
 
+3. Installing Angular
+npm install -g @angular/cli
 
----
-&copy; 2020, [luv2code LLC](http://www.luv2code.com) - All rights reserved.
+verify the installation 
+ng version

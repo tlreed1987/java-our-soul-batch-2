@@ -123,5 +123,11 @@ That's it! You have successfully installed the development tools: Visual Studio 
 
     *This troubleshooting tip was contributed by **Chris**. Thanks Chris!!*
 
----
-&copy; 2020, [luv2code LLC](http://www.luv2code.com) - All rights reserved.
+
+Installing Angular
+npm install -g @angular/cli
+
+verify the installation 
+ng version
+
+
