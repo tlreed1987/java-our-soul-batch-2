@@ -1,0 +1,34 @@
+1.  Populate Database using the script - provided through GIT under backend-app folder
+
+refresh-----------with-100-products.sql
+
+    A) workbench - run this script. if any error please identify and fix it. 
+
+2. Create Spring Boot Application/Project - Give Any Name [ your choice / ECommerceApp ]
+
+     - Add Spring Web, Spring JPA, Lombok, MySQL Data Driver, and anything else if you need/think 
+	- Entity Classes  - Used from GitHub [ Supplied ]
+
+3. Create a Rest Service to expose the functionality 
+
+	- to add new Product
+	- update exist product
+	- delete product
+	- find all Product
+	- to add new Category
+	- find product by id
+	- find product by categoryId
+	- findAll ProductCategory
+	- Find Product based on description containing specific keyword like 'python'
+
+find product by id : GET http://localhost:8080/ecommerce/products/1
+find product by categoryid : GET http://localhost:8080/ecommerce/products?categoryId=1
+
+find All product :  GET http://localhost:8080/ecommerce/products
+Add : POST http://localhost:8080/ecommerce/products
+update : PUT http://localhost:8080/ecommerce/products
+delete  : DELETE http://localhost:8080/ecommerce/products?id=1
+find product based on the description
+ GET http://localhost:8080/ecommerce/products?keyword=python
+find all Product-Category : ET http://localhost:8080/ecommerce/product-category		
+
