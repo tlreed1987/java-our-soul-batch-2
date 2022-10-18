@@ -14,12 +14,12 @@ refresh-----------with-100-products.sql
 	- to add new Product
 	- update exist product
 	- delete product
-	- find all Product
+	- find all Product***
 	- to add new Category
-	- find product by id
-	- find product by categoryId
-	- findAll ProductCategory
-	- Find Product based on description containing specific keyword like 'python'
+	- find product by id***
+	- find product by categoryId***
+	- findAll ProductCategory***
+	- Find Product based on description containing specific keyword like 'python'***
 
 find product by id : GET http://localhost:8080/ecommerce/products/1
 find product by categoryid : GET http://localhost:8080/ecommerce/products?categoryId=1
