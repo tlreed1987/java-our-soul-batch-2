@@ -1,0 +1,9 @@
+1. Download the HTML template starter files
+2. Install Bootstrap CSS styles locally using link // will do later --using npm
+3. Add local custom CSS styles to Angular src/styles.css file
+4. Integrate template files into Angular app
+5. Add support for icons and logos
+6. Enhance our application with product images
+
+
+and populate the category list from the database // currenty it is static
