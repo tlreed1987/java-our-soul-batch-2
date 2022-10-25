@@ -1,0 +1,8 @@
+Angular Routing:
+In a single-page application, we need to refresh the portion of a single page only to show the content from a specific component rather than refresh the whole page.
+Angular components provide multiple views and to handle navigation from one view to the next, we use Angular Router. 
+The router will enable us to navigate from one view to another by refreshing the area/portion that is defined by using <router-outlet>.
+-	We need to first define the router mapping. [ Path[URL] ------ Component ]
+-	Use Router Link to Navigate to the path
+-	Component will be refreshed to the area assigned with Router-Outlet
+
