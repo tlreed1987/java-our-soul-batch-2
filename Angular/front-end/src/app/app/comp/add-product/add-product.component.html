@@ -16,11 +16,8 @@
                 unitsInStock: <input type="number" name="unitsInStock" required id="unitsInStock" ngModel/><br/><br/> 
                 <div  ngModelGroup="category"> Category:
                        <select name="id" id="id"  ngModel>
-                        <option value="1"> Books </option>
-                        <option value="2"> Coffee Mugs</option>
-                        <option value="3"> Mouse Pads</option>
-                        <option value="4">Luggage Tags</option>
-                    </select> 
+                          <option *ngFor="let pcat of pc" value={{pcat.id}}> {{pcat.categoryName}}</option>
+                        </select> 
                 </div><br/><br/>
                 <input type="submit" [disabled]="!pdata.valid" value="submit"/>
             </form>

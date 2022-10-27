@@ -7,20 +7,15 @@
     <div class="menu-sidebar-content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar-list">
-                <li>
-                    <a routerLink="category/1">Books</a>
+                <li *ngFor="let pc of prodCategory">
+                    <a routerLink="category/{{ pc.id }}">{{ pc.categoryName }}</a>
                 </li>
-                <li>
-                    <a routerLink="category/2">Coffee Mugs</a>
-                </li>
-                <li>
-                    <a routerLink="category/3">Mouse Pads</a>
-                </li>
-                <li>
-                    <a routerLink="category/4">Luggage Tags</a>
-                </li>
+               
                 <li>
                     <a routerLink="addProduct">Add Product</a>
+                </li>
+                <li>
+                    <a routerLink="addProductR">Add Product-R</a>
                 </li>
                 <li>
                     <a routerLink="home">Home</a>

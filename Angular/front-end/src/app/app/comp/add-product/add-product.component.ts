@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'src/app/model/message';
+import { ProductCategory } from 'src/app/model/product-category';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -8,10 +9,14 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+  pc:ProductCategory[];
   msg:Message;
   constructor(private ps:ProductService) { }
 
   ngOnInit(): void {
+    this.ps.findAllCategories().subscribe(data=>{
+      this.pc=data;
+    });
   }
   
   onSubmit(pdata:any){

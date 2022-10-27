@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductCategory } from 'src/app/model/product-category';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-navigate',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-navigate.component.css']
 })
 export class ProductNavigateComponent implements OnInit {
-
-  constructor() { }
+  prodCategory:ProductCategory[];
+  constructor(private ps:ProductService) { }
 
   ngOnInit(): void {
+      this.ps.findAllCategories().subscribe(data=>{
+          this.prodCategory=data;
+      });
   }
 
 }

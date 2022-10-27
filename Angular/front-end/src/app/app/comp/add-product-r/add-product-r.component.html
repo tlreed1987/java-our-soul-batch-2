@@ -1,0 +1,31 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+          <h2> This page is under construction </h2>
+          <form [FormGroup]="pdata" (ngSubmit)="onSubmit()">
+             <label for="sku">Sku: </label>
+              <input type="text" id="sku" formControlName="sku" required/><br/>
+              <label for="name">Name: </label>
+              <input type="text" id="name" formControlName="name"/><br/>
+              <label for="description">Description: </label>
+              <input type="text" id="description" formControlName="description"/><br/>
+              <label for="unitPrice">UnitPrice: </label>
+              <input type="text" id="unitPrice" formControlName="unitPrice"/><br/>
+              <label for="imageUrl">imageUrl: </label>
+              <input type="text" id="imageUrl" formControlName="imageUrl"/><br/>
+              <label for="active">Active: </label>
+              <input type="checkbox" id="active" formControlName="active"/><br/>
+              <label for="unitsInStock">unitsInStock: </label>
+              <input type="text" id="unitsInStock" formControlName="unitsInStock"/><br/>
+              <div formGroupName="category"> <b>Category</b><br/>
+                <label for="id">Id: </label>
+                <input type="text" id="id" formControlName="id"/><br/>
+              </div>
+              <button type="submit" [disabled]="!pdata.valid">Submit</button>
+          </form>
+          
+               
+            
+        </div>
+    </div>
+</div>
