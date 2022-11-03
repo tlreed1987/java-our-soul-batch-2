@@ -1,6 +1,6 @@
 package com.example;
 
-public class DynamicList{
+public class DynamicList<T>{
 		private int [] list;
 		private int index;
 		
